@@ -11,14 +11,15 @@ Feature: The Internet Guinea Pig Website
    
     Examples:
      |username            | password          |
-      |  rnbichara        | 321321            |
-
-
- Scenario Outline: As a user transfer ammount is greater then available balance
-    When click on transferir button
-    Then click on terceros button
-    Then click on selecciona button 
-    Then select account
-    And check available balance
-    And enter transfer ammount
     
+     |  rnbichara        | 321321            |
+      
+
+      Scenario Outline: As a check error msg
+
+    When click on transferir button
+    Then Select terceros
+    Then select benificiary account
+    Then click on account
+    Then transfer zero amount 
+    # Then Transfer "0.00" amount
