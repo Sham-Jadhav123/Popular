@@ -18,7 +18,7 @@ Feature: The Internet Guinea Pig Website
     Scenario Outline: check scroll the screen upto locate element
 
     When click on menu bar button
-    Then scroll upto element 
+    Then scroll upto element bb
     # Then Select terceros
     # Then select benificiary account
     # Then click on account
