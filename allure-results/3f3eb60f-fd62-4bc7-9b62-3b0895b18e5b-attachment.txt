@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//*[@class = 'android.widget.TextView' and (@text = 'El monto para transferir debe ser mayor a RD$0.01' or . = 'El monto para transferir debe ser mayor a RD$0.01')]"
+}

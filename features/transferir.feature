@@ -15,7 +15,7 @@ Feature: The Internet Guinea Pig Website
      |  rnbichara        | 321321            |
       
 
-      Scenario Outline: As a check error msg
+    Scenario Outline: As a check error msg
 
     When click on transferir button
     Then Select terceros

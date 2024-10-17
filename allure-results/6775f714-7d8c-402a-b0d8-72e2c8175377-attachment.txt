@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//*[@class = 'android.widget.TextView' and (@text = 'Facilidades de pagos' or . = 'Facilidades de pagos')]"
+}
