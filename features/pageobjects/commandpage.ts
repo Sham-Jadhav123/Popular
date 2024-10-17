@@ -54,10 +54,19 @@ class checkcommands extends Page {
     return $("//*[@class = 'android.widget.TextView' and (@text = 'Selecciona un beneficiario' or . = 'Selecciona un beneficiario')]");
     //return $("//*[@class = 'android.widget.TextView' and (@text = 'Disponible: RD$1,004,813.00' or . = 'Disponible: RD$1,004,813.00')]");
    }
-   get getTimestampElement(){return  $("//*[@class = 'android.widget.TextView' and (@text = 'test' or . = 'test')]");}
+   get Element(){return  $("//*[@class = 'android.widget.TextView' and (@text = 'test' or . = 'test')]");}
   
 
+public async Scroll(){
 
+    //driver.pressKeyCode(AndroidKeyCode.ENTER);
+   // await driver.pressKeyCode(AndroidKeyCode.ENTER);
+   // await driver.keys(Keys.Enter);
+    (browser as any).keys('Enter');
+
+  
+
+}
 
 
 ////////////
