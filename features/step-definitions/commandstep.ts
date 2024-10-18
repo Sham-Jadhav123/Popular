@@ -18,16 +18,14 @@ Then(/^click on the accoundt$/, async() => {
 });
 
 
-// When(/^i scroll the screen upto "([^"]*)"$/, async() => {
-// 	await checkcommands.Scroll();
-// });
+When(/^i scroll the screen upto "([^"]*)"$/, async(text) => {
+	await checkcommands.scrollToElement(text);
+});
 
 
-// Then(/^I see the text "([^"]*)"$/, async() => {
 
-//     const isVisible = await checkcommands.isTextVisible();
-//     if (!isVisible) {
-//         throw new Error(`Element with text "ROCO" is not visible.`);
-//     }
+Then(/^user transfer an amount enter value using vertual keyboard$/, async() => {
+    await checkcommands.Entervalue();
 	
-// });
+});
+

@@ -67,7 +67,9 @@ class checkcommands extends Page {
    private scrollableElement= $('element');
 
   public get amountfield(){
-    return $("//*[@class = 'android.widget.EditText' and (@text = 'RD$' or . = 'RD$')]");
+   // return $("//*[@class = 'android.widget.EditText' and (@text = 'RD$' or . = 'RD$')]");
+   return $("//*[@class = 'android.widget.EditText' and (@text = 'RD$' or . = 'RD$')]");
+
   }
 
     public async menu() {
@@ -101,7 +103,9 @@ await this.transf.waitForDisplayed({timeout:50000});
 
       await this.dummy.waitForDisplayed({ timeout:50000 });
 
-     await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("YUYU")');
+     await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("ROCO")');
+     await this.element.click();
+
      // await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollDown(1, 5)');
      //await this.element.scrollIntoView("ROCO");
 
@@ -110,30 +114,20 @@ await this.transf.waitForDisplayed({timeout:50000});
 
 
 
-// public async scrollToElement() {
-//   // Check if the element is already displayed
-//   while (true) {
-//       const isVisible = await $(element).isDisplayed();
-//       if (isVisible) {
-//           break;
-//       }
-
-//       // Use mobile: swipe to scroll up
-//       await browser.execute('mobile: swipe', {
-//           direction: 'up',
-//           percentage: 0.75, // Adjust as needed for swipe length
-//       });
-//   }
-// //await this.element.click();
-// }
-
-// async isTextVisible(): Promise<boolean> {
-//   return await this.element.isDisplayed();
-// }
+ public async scrollToElement(text) {
 
 
+  await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("ROCO")');
+  await this.element.click();
+  
 
+ }
 
+ public async Entervalue() {
+
+  await this.amountfield.click();
+  await this.amountfield.setValue("10");
+ }
 
 }
 export default new checkcommands();
