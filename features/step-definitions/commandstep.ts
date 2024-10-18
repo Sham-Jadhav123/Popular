@@ -12,28 +12,22 @@ When(/^click on menu bar button$/, async() => {
 });
 
 
-// Then(/^scroll upto element$/, async() => {
-//     const timestampElement = await checkcommands.scrollToElement();
-    
-// });
-
-Then(/^user select the account no$/, async() => {
-
-
-
-// 	const timestampElement = await commandpage.getTimestampElement();
-//    const isVisible = await timestampElement.isDisplayed();
-//    if (isVisible) {
-//       await timestampElement.click(); // Click the timestamp element
-//   } else {
-//       throw new Error(`The timestamp "23/09/2024 02:14 PM" is not visible.`);
-//   }
- 
+Then(/^click on the accoundt$/, async() => {
+    await checkcommands.Scroll();
+   
 });
 
-// Then(/^click on the accoundt no$/, async() => {
-//     const timestampElement = await commandpage.getTimestampElement();
-//     const isVisible = await timestampElement.isDisplayed();
 
-//     expect(isVisible).toBeClickable();
-//  });
+// When(/^i scroll the screen upto "([^"]*)"$/, async() => {
+// 	await checkcommands.Scroll();
+// });
+
+
+// Then(/^I see the text "([^"]*)"$/, async() => {
+
+//     const isVisible = await checkcommands.isTextVisible();
+//     if (!isVisible) {
+//         throw new Error(`Element with text "ROCO" is not visible.`);
+//     }
+	
+// });

@@ -1,6 +1,7 @@
 import { $, browser, driver, expect } from '@wdio/globals'
 import Page from './page';
 import {TouchAction} from 'webdriverio'
+import {scrollToElement } from '../pageobjects/scrollUtil.ts';
 
 
 
@@ -54,28 +55,28 @@ class checkcommands extends Page {
     return $("//*[@class = 'android.widget.TextView' and (@text = 'Selecciona un beneficiario' or . = 'Selecciona un beneficiario')]");
     //return $("//*[@class = 'android.widget.TextView' and (@text = 'Disponible: RD$1,004,813.00' or . = 'Disponible: RD$1,004,813.00')]");
    }
-   get Element(){return  $("//*[@class = 'android.widget.TextView' and (@text = 'test' or . = 'test')]");}
-  
+   public get dummy() {
+    return $("//*[@class = 'android.widget.TextView' and (@text = 'GREGORY THE PETS SPA' or . = 'GREGORY THE PETS SPA')]");
+   }
+  public  get element(){
+    //return  $("//*[@class = 'android.widget.TextView' and (@text = 'test' or . = 'test')]");
+    return $("//*[@class = 'android.widget.TextView' and (@text = 'ROCO' or . = 'ROCO')]");
+  }
 
-public async Scroll(){
+   //scrollableElement = $('android=new UiScrollable(new UiSelector().scrollable(true))');
+   private scrollableElement= $('element');
 
-    //driver.pressKeyCode(AndroidKeyCode.ENTER);
-   // await driver.pressKeyCode(AndroidKeyCode.ENTER);
-   // await driver.keys(Keys.Enter);
-    (browser as any).keys('Enter');
-
-  
-
-}
-
-
-////////////
+  public get amountfield(){
+    return $("//*[@class = 'android.widget.EditText' and (@text = 'RD$' or . = 'RD$')]");
+  }
 
     public async menu() {
 
 
-   // await this.menuclick.waitForDisplayed({timeout:50000});
-    //await this.menuclick.click();
+  //  await this.menuclick.waitForDisplayed({timeout:50000});
+  //   await this.menuclick.click();
+    // await this.Facilidadesdepagosbtn.waitForDisplayed({timeout:30000});
+    // await this.Facilidadesdepagosbtn.scrollIntoView();
 
    // await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(1, 5)');
      //await driver.execute('mobile: scroll', {direction: 'down'});
@@ -89,33 +90,46 @@ await this.transf.waitForDisplayed({timeout:50000});
  await this.tercerorosbutton.click();
  await this.benif.click();
  await this.seleacc.waitForDisplayed({timeout:90000});
-// await this.seleacc.click();
+//await this.seleacc.click();
 
 
     }
 
-    // async  scrollToElement() {
-    //     let isElementVisible = false;
-    // await this.Facilidadesdepagosbtn.isDisplayed();
-    //     while (!isElementVisible) {
-    //         try {
-    //             const element = await (this.Facilidadesdepagosbtn);
-    //             isElementVisible = await element.isDisplayed();
-    //         } catch (err) {
-    //             // If the element is not found, scroll down
-    //            // await driver.execute('mobile: scroll', { direction: 'down' });
 
-    //            await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(1, 5)');
-    //         }
-    //     }
-    // }
     
-   
-    
+    public async Scroll(){
+
+      await this.dummy.waitForDisplayed({ timeout:50000 });
+
+     await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("YUYU")');
+     // await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollDown(1, 5)');
+     //await this.element.scrollIntoView("ROCO");
+
+  }
 
 
 
 
+// public async scrollToElement() {
+//   // Check if the element is already displayed
+//   while (true) {
+//       const isVisible = await $(element).isDisplayed();
+//       if (isVisible) {
+//           break;
+//       }
+
+//       // Use mobile: swipe to scroll up
+//       await browser.execute('mobile: swipe', {
+//           direction: 'up',
+//           percentage: 0.75, // Adjust as needed for swipe length
+//       });
+//   }
+// //await this.element.click();
+// }
+
+// async isTextVisible(): Promise<boolean> {
+//   return await this.element.isDisplayed();
+// }
 
 
 

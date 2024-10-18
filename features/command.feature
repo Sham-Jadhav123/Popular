@@ -26,5 +26,7 @@ Feature: The Internet Guinea Pig Website
 
 
 
-    Then user select the account no
-    # Then click on the accoundt no
+    # Then user select the account no
+    Then click on the accoundt 
+      # When i scroll the screen upto "ROCO"
+    #  Then I see the text "ROCO"
