@@ -18,9 +18,9 @@ Then(/^click on the accoundt$/, async() => {
 });
 
 
-When(/^i scroll the screen upto "([^"]*)"$/, async(text) => {
-	await checkcommands.scrollToElement(text);
-});
+// When(/^i scroll the screen upto "([^"]*)"$/, async(text) => {
+// 	await checkcommands.scrollToElement(text);
+// });
 
 
 

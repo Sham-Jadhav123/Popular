@@ -82,8 +82,10 @@ class LoginPage extends Page {
      }
 
      public get Home_pause () {
-        return $("//*[@class = 'android.widget.TextView' and (@text = 'Hola, Rosilia' or . = 'Hola, Rosilia')]");
+//return $("//*[@class = 'android.widget.TextView' and (@text = 'Hola, Rosilia' or . = 'Hola, Rosilia')]");
        // return $('//*[@class="android.view.View" and normalize-space(.)=""]');
+       return $("//*[@class = 'android.widget.TextView' and (@text = 'Transferir' or . = 'Transferir')]");
+
      }
      public get transferirbutton() { 
         //return $("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.compose.ui.platform.ComposeView[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[5]/android.view.View[1]/android.widget.TextView[1]")
@@ -118,7 +120,7 @@ class LoginPage extends Page {
        // await this.pwd.setValue("321321");
      
 
-        await this.Home_pause.waitForDisplayed({timeout:100000})
+        await this.Home_pause.waitForDisplayed({timeout:1000000});
        await expect(await this.Home_pause).toBeDisplayed();
       // await this.transferirbutton.waitForDisplayed({timeout:20000})
 //await this.transferirbutton.click();
