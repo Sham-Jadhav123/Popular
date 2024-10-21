@@ -11,7 +11,9 @@ class TercerosUSD extends Page {
     get selectUSD() {return $("//*[@class = 'android.widget.TextView' and (@text = 'Movimientos Usd' or . = 'Movimientos Usd')]")}
     get selectionaun() {return $("//*[@class = 'android.widget.TextView' and (@text = 'Selecciona un beneficiario' or . = 'Selecciona un beneficiario')]")}
     get selectUSDacco() { return $("//*[@class = 'android.widget.TextView' and (@text = 'SR IGOR THEN QUIROZ' or . = 'SR IGOR THEN QUIROZ')]")}
-
+    public get dummy() {
+        return $("//*[@class = 'android.widget.TextView' and (@text = 'GREGORY THE PETS SPA' or . = 'GREGORY THE PETS SPA')]");
+       }
    
 
 async TransferirBtn() {
@@ -30,8 +32,9 @@ async selectUSDacc() {
 
 async USDAcc() {
     await this.selectionaun.click();
-    await this.selectUSDacco.waitForDisplayed({timeout:30000});
-    await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("SR IGOR THEN QUIROZ")');
+   // await this.dummy.waitForDisplayed({ timeout:50000 });
+   // await this.selectUSDacco.waitForDisplayed({timeout:30000});
+    await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("QUIROZ")');
     await this.selectUSDacco.click();
 }
 
