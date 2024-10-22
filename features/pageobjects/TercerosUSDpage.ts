@@ -12,9 +12,14 @@ class TercerosUSD extends Page {
     get selectionaun() {return $("//*[@class = 'android.widget.TextView' and (@text = 'Selecciona un beneficiario' or . = 'Selecciona un beneficiario')]")}
     get selectUSDacco() { return $("//*[@class = 'android.widget.TextView' and (@text = 'SR IGOR THEN QUIROZ' or . = 'SR IGOR THEN QUIROZ')]")}
     public get dummy() {
-        return $("//*[@class = 'android.widget.TextView' and (@text = 'GREGORY THE PETS SPA' or . = 'GREGORY THE PETS SPA')]");
+        return $("//*[@class = 'android.widget.TextView' and (@text = 'AAvelinoDontDelete' or . = 'AAvelinoDontDelete')]");
        }
-   
+    get USD() { return $("//*[@class = 'android.widget.EditText' and (@text = 'US$' or . = 'US$')]")}   
+    get descriptions() { return $("//*[@class = 'android.widget.EditText' and (@text = '' or . = '')]")}
+    get continue() {return $("//*[@class = 'android.widget.TextView' and (@text = 'Continuar' or . = 'Continuar')]")}
+    get SiTransferiri() { return $("//*[@class = 'android.widget.TextView' and (@text = 'Sí, transferir' or . = 'Sí, transferir')]")}
+    get tocken() { return $("//*[@class = 'android.widget.EditText' and (@text = '' or . = '')]")}
+
 
 async TransferirBtn() {
     await this.Transferir.click();
@@ -27,15 +32,38 @@ async selectionfield() {
 }
 async selectUSDacc() {
     await this.selectUSD.click();
-    await this.selectionaun.waitForDisplayed({timeout:3000});
+   // await this.selectionaun.waitForDisplayed({timeout:3000});
 }
 
 async USDAcc() {
     await this.selectionaun.click();
-   // await this.dummy.waitForDisplayed({ timeout:50000 });
+    await this.dummy.waitForDisplayed({ timeout:50000 });
    // await this.selectUSDacco.waitForDisplayed({timeout:30000});
     await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("QUIROZ")');
     await this.selectUSDacco.click();
+}
+async EnterUSD() {
+    await this.USD.waitForDisplayed({timeout:3000});
+    await this.USD.setValue("1");
+}
+
+async EnterDiscriptionUSD() {
+    //await this.descriptions.click();
+    await this.descriptions.waitForDisplayed({timeout:3000});
+    await this.descriptions.setValue("Testing");
+    browser.execute('mobile: performEditorAction', { action: 'done' });
+
+}
+
+async clickonContinueUSD() {
+    await this.continue.click();
+}
+async SitransfeririButtonUSD() {
+    await this.SiTransferiri.waitForDisplayed({timeout:6000});
+    await this.SiTransferiri.click();
+    await this.tocken.waitForDisplayed({timeout:3000});
+    //browser.pause(3000);
+    
 }
 
 

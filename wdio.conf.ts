@@ -137,7 +137,12 @@ export const config: WebdriverIO.Config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
+    reporters: ['spec',['allure', {
+        outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true,
+        disableScenarioReporting: true,
+       
+    }]],
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
@@ -166,11 +171,18 @@ export const config: WebdriverIO.Config = {
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false
     },
-
+   
+    
+    
+    
 
     //
     // =====
     // Hooks
+
+  
+    
+    
     // =====
     // WebdriverIO provides several hooks you can use to interfere with the test process in order to enhance
     // it and to build services around it. You can either apply a single function or an array of
@@ -255,19 +267,27 @@ export const config: WebdriverIO.Config = {
      */
     // beforeStep: function (step, scenario, context) {
     // },
+
     /**
      *
-     * Runs after a Cucumber Step.
-     * @param {Pickle.IPickleStep} step             step data
-     * @param {IPickle}            scenario         scenario pickle
-     * @param {object}             result           results object containing scenario results
-     * @param {boolean}            result.passed    true if scenario has passed
-     * @param {string}             result.error     error stack if scenario failed
-     * @param {number}             result.duration  duration of scenario in milliseconds
-     * @param {object}             context          Cucumber World object
-     */
-    // afterStep: function (step, scenario, result, context) {
-    // },
+    //  * Runs after a Cucumber Step.
+    //  * @param {Pickle.IPickleStep} step             step data
+    //  * @param {IPickle}            scenario         scenario pickle
+    //  * @param {object}             result           results object containing scenario results
+    //  * @param {boolean}            result.passed    true if scenario has passed
+    //  * @param {string}             result.error     error stack if scenario failed
+    //  * @param {number}             result.duration  duration of scenario in milliseconds
+    //  * @param {object}             context          Cucumber World object
+    //  */
+     afterStep: async function () {
+
+        await browser.takeScreenshot();
+
+     },
+
+   
+
+
     /**
      *
      * Runs after a Cucumber Scenario.
@@ -278,7 +298,11 @@ export const config: WebdriverIO.Config = {
      * @param {number}                 result.duration  duration of scenario in milliseconds
      * @param {object}                 context          Cucumber World object
      */
-    // afterScenario: function (world, result, context) {
+    // afterScenario: async function () {
+
+    //     await browser.takeScreenshot();
+
+
     // },
     /**
      *

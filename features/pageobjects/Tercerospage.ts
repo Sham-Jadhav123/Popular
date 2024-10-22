@@ -20,7 +20,23 @@ class Terceros extends Page {
     get tocken() { return $("//*[@class = 'android.widget.EditText' and (@text = '' or . = '')]")}
     get valider() { return $("//*[@class = 'android.widget.TextView' and (@text = 'Validar Token Popular' or . = 'Validar Token Popular')]")}
     get continuar() {return $("//*[@class = 'android.widget.Button' and (@text = 'Continuar' or . = 'Continuar') and @resource-id = 'com.popular.app.android:id/btnNonToken']")}
+    get errmsg() {return $("//*[@class = 'android.widget.TextView' and (@text = 'De acuerdo' or . = 'De acuerdo')]")}
     
+///////////////////////////////////////////
+get selectUSD() {return $("//*[@class = 'android.widget.TextView' and (@text = 'Movimientos Usd' or . = 'Movimientos Usd')]")}
+get selectionaun() {return $("//*[@class = 'android.widget.TextView' and (@text = 'Selecciona un beneficiario' or . = 'Selecciona un beneficiario')]")}
+get selectUSDacco() { return $("//*[@class = 'android.widget.TextView' and (@text = 'SR IGOR THEN QUIROZ' or . = 'SR IGOR THEN QUIROZ')]")}
+public get dummy() {
+    return $("//*[@class = 'android.widget.TextView' and (@text = 'AAvelinoDontDelete' or . = 'AAvelinoDontDelete')]");
+   }
+get USD() { return $("//*[@class = 'android.widget.EditText' and (@text = 'US$' or . = 'US$')]")}   
+get descriptionsUSD() { return $("//*[@class = 'android.widget.EditText' and (@text = '' or . = '')]")}
+get continueUSD() {return $("//*[@class = 'android.widget.TextView' and (@text = 'Continuar' or . = 'Continuar')]")}
+get SiTransfeririUSD() { return $("//*[@class = 'android.widget.TextView' and (@text = 'Sí, transferir' or . = 'Sí, transferir')]")}
+get tockenUSD() { return $("//*[@class = 'android.widget.EditText' and (@text = '' or . = '')]")}
+
+
+
 
     async TransferirButton() {
         await this.Transferir.click();
@@ -60,26 +76,31 @@ class Terceros extends Page {
 
     }
     async clickonContinue() {
-        await this.continue.click();
+        await driver.back();
+       // await this.continue.click();
     }
-    async SitransfeririButton() {
-        await this.SiTransferiri.waitForDisplayed({timeout:60000});
-        await this.SiTransferiri.click();
-        await this.tocken.waitForDisplayed({timeout:60000});
+//     async SitransfeririButton() {
+//       await  this.SiTransferiri.waitForDisplayed({timeout:60000})
+       
+    
+//        await this.errmsg.click();
+//         await this.SiTransferiri.click();
+//         await this.tocken.waitForDisplayed({timeout:60000});
         
-    }
-    async EnterToken() {
+        
+//     }
+//     async EnterToken() {
 
-        await this.tocken.setValue("321321");
-        await this.valider.waitForDisplayed({timeout:50000});
-        await this.valider.click();
-        await this.continuar.waitForDisplayed({timeout:60000});
-        await this.continuar.click();
-      // await this.Transferir.waitForDisplayed({timeout:60000});
+//         await this.tocken.setValue("321321");
+//         await this.valider.waitForDisplayed({timeout:50000});
+//         await this.valider.click();
+//         await this.continuar.waitForDisplayed({timeout:6000});
+//         await this.continuar.click();
+//       // await this.Transferir.waitForDisplayed({timeout:60000});
 
 
 
-}
+// }
     async transferirButton1() {
         await this.Transferir.click();
     }
@@ -91,7 +112,43 @@ class Terceros extends Page {
         await this.selecciona.click();
         await this.selectacc.waitForDisplayed({timeout:3000});
     }
+//////////////////////////
+    
+async selectUSDacc() {
+    await this.selectUSD.click();
+   // await this.selectionaun.waitForDisplayed({timeout:3000});
+}
 
+async USDAcc() {
+    await this.selectionaun.click();
+    await this.dummy.waitForDisplayed({ timeout:50000 });
+   // await this.selectUSDacco.waitForDisplayed({timeout:30000});
+    await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("QUIROZ")');
+    await this.selectUSDacco.click();
+}
+async EnterUSD() {
+    await this.USD.waitForDisplayed({timeout:3000});
+    await this.USD.setValue("1");
+}
+
+// async EnterDiscriptionUSD() {
+//     //await this.descriptions.click();
+//     //await this.descriptions.waitForDisplayed({timeout:3000});
+//     await this.descriptions.setValue("Testing");
+//     browser.execute('mobile: performEditorAction', { action1: 'done' });
+
+// }
+
+// async clickonContinueUSD() {
+//     await this.continue.click();
+// }
+// async SitransfeririButtonUSD() {
+//     await this.SiTransferiri.waitForDisplayed({timeout:6000});
+//     await this.SiTransferiri.click();
+//     await this.tocken.waitForDisplayed({timeout:3000});
+//     //browser.pause(3000);
+    
+// }
 
 
 

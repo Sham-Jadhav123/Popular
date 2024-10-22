@@ -2,11 +2,14 @@ import { Given, When,  Then} from "@wdio/cucumber-framework";
 import TercerosUSD from "../pageobjects/TercerosUSDpage.ts";
 
 
+
 When(/^user click on the transfe button$/, async() => {
 
     await TercerosUSD.TransferirBtn();
 	
 });
+
+
 
 
 Then(/^click on Tercero btn$/, async() => {
@@ -34,23 +37,39 @@ Then(/^select USD acc benificiary$/, async() => {
 
 
 
-
-Then(/^enter USD amount$/, async() => {
+Then(/^Enter USD amount value$/, async() => {
+    await TercerosUSD.EnterUSD();
 	
 });
 
-Then(/^Enter descriptions for USD Transaction$/, async() => {
+
+
+Then(/^Enter descriptions for USD amount transfe$/, async() => {
+	
+    await TercerosUSD.EnterDiscriptionUSD();
+});
+
+
+
+Then(/^click on the continue button for USD Trans$/, async() => {
+    await TercerosUSD.clickonContinueUSD();
 	
 });
 
-Then(/^click on the continue button$/, async() => {
+
+
+Then(/^click on the Si transfer button for USD$/, async() => {
+    await TercerosUSD.SitransfeririButtonUSD();
 	
 });
 
-Then(/^click on the Si transfer button$/, async() => {
-	
-});
 
-Then(/^enter tocken for Transaction$/, async() => {
+
+
+// Then(/^click on the Si transfer button$/, async() => {
 	
-});
+// });
+
+// Then(/^enter tocken for Transaction$/, async() => {
+	
+// });

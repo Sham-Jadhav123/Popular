@@ -25,11 +25,10 @@ Feature: The Internet Guinea Pig Website
    Then click on Tercero btn
    Then select USD acc
    Then select account
-
-
    Then select USD acc benificiary 
-   Then enter USD amount
-   Then Enter descriptions for USD Transaction
-   Then click on the continue button
-   Then click on the Si transfer button
-   Then enter tocken for Transaction
+
+   Then Enter USD amount value
+   Then Enter descriptions for USD amount transfe
+   Then click on the continue button for USD Trans
+   Then click on the Si transfer button for USD
+  #  Then enter tocken for Transaction

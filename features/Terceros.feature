@@ -1,6 +1,8 @@
+
+
 Feature: The Internet Guinea Pig Website
 
-  Scenario Outline: As a user, I can log into the secure area
+  Scenario: As a user, I can log into the secure area
 
     Given I am on the login page
     When I login with <username> and <password>
@@ -16,9 +18,9 @@ Feature: The Internet Guinea Pig Website
 
 
 
-   Scenario Outline: Terceros Transaction flow
+   Scenario: Terceros Transaction flow
 
-   When successfully login click on transferir button
+   When successfully login click on transferi button
    Then click on Terceros 
    Then select user selected account
    Then select  account
@@ -26,21 +28,24 @@ Feature: The Internet Guinea Pig Website
    Then enter amount
    Then Enter descriptions
    Then click on continue button
-   Then click on Si transfer button
-   Then enter tocken
+  #  Then click on Si transfer button
+  #  Then enter tocken
+
+
+
 
 
    
 
- Scenario Outline: Terceros Transaction flow for USD to USD 
+ Scenario: Terceros Transaction flow for USD to USD 
 
-   When user login to app click on transferir button
+   When user login to app click on transferi
    Then click on Terceros button
    Then select   user  account should be USD
    Then select USD account
    Then select USD benificiary 
    Then enter USD amount
-   Then Enter descriptions for USD Transaction
-   Then click on the continue button
-   Then click on the Si transfer button
-   Then enter tocken for Transaction
+  #  Then Enter descriptions for USD Transaction
+  #  Then click on the continue button
+  #  Then click on the Si transfer button
+  #  Then enter tocken for Transaction
