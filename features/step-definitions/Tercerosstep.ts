@@ -96,10 +96,10 @@ Then(/^enter USD amount$/, async() => {
 
 // });
 
-// Then(/^click on the continue button$/,async() => {
-//     await Terceros.clickonContinueUSD();
+Then(/^click on the continue button$/,async() => {
+    await Terceros.clickonContinueUSD();
 
-// });
+});
 
 // Then(/^click on the Si transfer button$/, async() => {
 //     await Terceros.SitransfeririButtonUSD();

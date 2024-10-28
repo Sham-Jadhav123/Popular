@@ -46,6 +46,6 @@ Feature: The Internet Guinea Pig Website
    Then select USD benificiary 
    Then enter USD amount
   #  Then Enter descriptions for USD Transaction
-  #  Then click on the continue button
+    Then click on the continue button
   #  Then click on the Si transfer button
   #  Then enter tocken for Transaction

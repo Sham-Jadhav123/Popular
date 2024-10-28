@@ -1,5 +1,6 @@
 import { $, browser, driver, expect } from '@wdio/globals'
 import Page from './page';
+import commandpage from "../pageobjects/commandpage.ts";
 
 
 
@@ -79,28 +80,28 @@ get tockenUSD() { return $("//*[@class = 'android.widget.EditText' and (@text = 
         await driver.back();
        // await this.continue.click();
     }
-//     async SitransfeririButton() {
-//       await  this.SiTransferiri.waitForDisplayed({timeout:60000})
+//      async SitransfeririButton() {     
+//          await  this.SiTransferiri.waitForDisplayed({timeout:60000})
        
     
 //        await this.errmsg.click();
-//         await this.SiTransferiri.click();
-//         await this.tocken.waitForDisplayed({timeout:60000});
+//          await this.SiTransferiri.click();
+//          await this.tocken.waitForDisplayed({timeout:60000});
         
         
-//     }
-//     async EnterToken() {
+//      }
+//      async EnterToken() {
 
-//         await this.tocken.setValue("321321");
-//         await this.valider.waitForDisplayed({timeout:50000});
+//          await this.tocken.setValue("321321");
+//          await this.valider.waitForDisplayed({timeout:50000});
 //         await this.valider.click();
 //         await this.continuar.waitForDisplayed({timeout:6000});
-//         await this.continuar.click();
-//       // await this.Transferir.waitForDisplayed({timeout:60000});
+//        await this.continuar.click();
+//        // await this.Transferir.waitForDisplayed({timeout:60000});
 
 
 
-// }
+//  }
     async transferirButton1() {
         await this.Transferir.click();
     }
@@ -139,9 +140,9 @@ async EnterUSD() {
 
 // }
 
-// async clickonContinueUSD() {
-//     await this.continue.click();
-// }
+async clickonContinueUSD() {
+    await this.continue.click();
+}
 // async SitransfeririButtonUSD() {
 //     await this.SiTransferiri.waitForDisplayed({timeout:6000});
 //     await this.SiTransferiri.click();

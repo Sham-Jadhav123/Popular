@@ -1,5 +1,6 @@
-import { $, expect } from '@wdio/globals'
+import { $, browser, expect } from '@wdio/globals'
 import Page from './page';
+import commandpage from "../pageobjects/commandpage.ts";
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -81,16 +82,24 @@ class LoginPage extends Page {
        // return $('//*[@class="android.view.View" and normalize-space(.)=""]');
      }
 
+
+     //get Tocken() { return $("//*[@class = 'android.widget.TextView' and (@text = 'Ingrese Token Popular' or . = 'Ingrese Token Popular')]")}
+     get Tocken() {return $("//*[@class = 'android.widget.EditText' and (@text = '' or . = '')]")}
+     get clicktocken() { return $("//*[@class = 'android.widget.TextView' and (@text = 'Validar Token Popular' or . = 'Validar Token Popular')]")}
+     get accept() { return $("//*[@class = 'android.widget.TextView' and (@text = 'Lo haré luego' or . = 'Lo haré luego')]")}
+     get accept1() { return $("//*[@class = 'android.widget.TextView' and (@text = 'Lo haré luego' or . = 'Lo haré luego')]")}
+
      public get Home_pause () {
-//return $("//*[@class = 'android.widget.TextView' and (@text = 'Hola, Rosilia' or . = 'Hola, Rosilia')]");
+// return $("//*[@class = 'android.widget.TextView' and (@text = 'Hola, Rosilia' or . = 'Hola, Rosilia')]");
        // return $('//*[@class="android.view.View" and normalize-space(.)=""]');
-       return $("//*[@class = 'android.widget.TextView' and (@text = 'Transferir' or . = 'Transferir')]");
+     return $("//*[@class = 'android.widget.TextView' and (@text = 'Transferir' or . = 'Transferir')]");
 
      }
      public get transferirbutton() { 
         //return $("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.compose.ui.platform.ComposeView[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[5]/android.view.View[1]/android.widget.TextView[1]")
     return $("//*[@class = 'android.view.View' and (@text = '' or . = '')]");
     }
+
 
 
      
@@ -116,14 +125,28 @@ class LoginPage extends Page {
     
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
-       
+//browser.pause(3000);
+        await expect(await this.accept1).toBeDisplayed();
+        await this.accept1.click();
+        browser.pause(3000);
        // await this.pwd.setValue("321321");
+       await this.Tocken.setValue("321321");
+       browser.pause(3000);
+       browser.execute('mobile: performEditorAction', { action: 'done' });
+       browser.pause(3000);
+       await this.clicktocken.click();
+       browser.pause(100000);
+      // await expect(await this.accept).toBeDisplayed();
+
+       //await this.accept.click();
+       browser.pause(14000);
      
 
-        await this.Home_pause.waitForDisplayed({timeout:1000000});
-       await expect(await this.Home_pause).toBeDisplayed();
-      // await this.transferirbutton.waitForDisplayed({timeout:20000})
-//await this.transferirbutton.click();
+       await this.Home_pause.waitForDisplayed({timeout:1000000});
+    await expect(await this.Home_pause).toBeDisplayed();
+     await this.transferirbutton.waitForDisplayed({timeout:20000})
+     //await this.transferirbutton.click();
+        browser.pause(16000);
    
     }
 
